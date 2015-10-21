@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/textCode"
+        android:background="@color/bright_foreground_inverse_material_light"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:hint="Enter your code"
+        android:typeface="normal"
+        android:editable="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/action_add_code"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_add" />
+</LinearLayout>

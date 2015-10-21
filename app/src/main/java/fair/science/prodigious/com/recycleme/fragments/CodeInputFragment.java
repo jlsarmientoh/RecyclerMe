@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import fair.science.prodigious.com.recycleme.R;
 public class CodeInputFragment extends Fragment implements View.OnClickListener {
 
 
-    private TextView textCode;
+    private EditText textCode;
 
     private ImageButton actionAdd;
 
@@ -33,7 +34,7 @@ public class CodeInputFragment extends Fragment implements View.OnClickListener 
                              Bundle savedInstanceState){
 
         View fragment = inflater.inflate(R.layout.fragment_code_input, container, false);
-        this.textCode = (TextView) fragment.findViewById(R.id.textCode);
+        this.textCode = (EditText) fragment.findViewById(R.id.textCode);
         this.actionAdd = (ImageButton) fragment.findViewById(R.id.action_add_code);
         this.actionAdd.setOnClickListener(this);
         return fragment;

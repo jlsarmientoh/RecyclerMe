@@ -4,16 +4,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_add"
-            android:icon="@android:drawable/ic_menu_camera"
+            android:icon="@android:drawable/stat_sys_upload"
             android:title="@string/action_add" />
         <item
             android:id="@+id/nav_score"
-            android:icon="@android:drawable/ic_menu_camera"
+            android:icon="@android:drawable/btn_star"
             android:title="@string/action_score" />
+        <!-- Change icons here -->
         <item
             android:id="@+id/nav_goals"
             android:icon="@android:drawable/ic_menu_gallery"
             android:title="@string/action_goals" />
+        <item
+            android:id="@+id/nav_challenges"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/action_challenges" />
     </group>
 
     <item android:title="Communicate">

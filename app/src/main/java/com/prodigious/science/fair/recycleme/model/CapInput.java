@@ -1,4 +1,4 @@
-package fair.science.prodigious.com.recycleme.model;
+package com.prodigious.science.fair.recycleme.model;
 
 import java.util.Date;
 

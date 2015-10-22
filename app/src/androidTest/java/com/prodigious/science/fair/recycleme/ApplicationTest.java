@@ -1,4 +1,4 @@
-package fair.science.prodigious.com.recycleme;
+package com.prodigious.science.fair.recycleme;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

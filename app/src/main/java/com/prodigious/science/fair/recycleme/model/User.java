@@ -1,4 +1,4 @@
-package fair.science.prodigious.com.recycleme.model;
+package com.prodigious.science.fair.recycleme.model;
 
 /**
  * Created by Jorge on 20/10/2015.

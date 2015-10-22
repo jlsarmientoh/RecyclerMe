@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "fair.science.prodigious.com.recycleme"
+        applicationId "com.prodigious.science.fair.recycleme"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1

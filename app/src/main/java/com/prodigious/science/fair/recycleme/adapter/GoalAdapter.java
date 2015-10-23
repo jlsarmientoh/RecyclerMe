@@ -40,6 +40,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
         //TODO add bind code
         Goal goal = this.goals.get(position);
         holder.setDescription(goal.getDescription());
+        holder.setImagePath(goal.getImageUrl());
     }
 
     @Override
@@ -54,16 +55,26 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
 
         private TextView txtGoalDescription;
         private ImageView imageGoal;
+        private TextView txtGoalPoints;
 
 
         public GoalViewHolder(View itemView) {
             super(itemView);
             this.txtGoalDescription = (TextView) itemView.findViewById(R.id.txt_goal_description);
             this.imageGoal = (ImageView) itemView.findViewById(R.id.image_goal);
+            this.txtGoalPoints = (TextView)itemView.findViewById(R.id.txt_goal_points);
         }
 
         public void setDescription(String description){
             this.txtGoalDescription.setText(description);
+        }
+
+        public void setImagePath(String path){
+            //TODO add code to load goal's image
+        }
+
+        public void setPoints(int points){
+            this.txtGoalPoints.setText(Integer.toString(points));
         }
     }
 }

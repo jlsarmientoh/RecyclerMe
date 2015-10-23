@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.prodigious.science.fair.recycleme.fragments.CodeInputFragment;
+import com.prodigious.science.fair.recycleme.fragments.GoalsListFragment;
 
 import fair.science.prodigious.com.recycleme.R;
 
@@ -79,9 +80,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_add) {
             loadInputTapFragmnet();
+
         } else if (id == R.id.nav_score) {
 
         } else if (id == R.id.nav_goals) {
+            loadGoalListFragment();
 
         } else if (id == R.id.nav_share) {
 
@@ -98,7 +101,14 @@ public class MainActivity extends AppCompatActivity
                 beginTransaction().
                 replace(R.id.content_main, fragment).
                 commit();
+    }
 
+    private void loadGoalListFragment(){
+        GoalsListFragment fragment = GoalsListFragment.createGoalsListFragment();
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_main, fragment).
+                commit();
     }
 
     @Override

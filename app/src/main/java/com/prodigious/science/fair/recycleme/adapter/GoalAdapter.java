@@ -37,10 +37,10 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
 
     @Override
     public void onBindViewHolder(GoalViewHolder holder, int position) {
-        //TODO add bind code for image url
         Goal goal = this.goals.get(position);
         holder.setDescription(goal.getDescription());
         holder.setImagePath(goal.getImageUrl());
+        holder.setPoints(goal.getPoints());
     }
 
     @Override

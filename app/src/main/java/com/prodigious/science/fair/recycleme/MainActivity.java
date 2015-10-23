@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.prodigious.science.fair.recycleme.fragments.ChallengeListFragment;
 import com.prodigious.science.fair.recycleme.fragments.CodeInputFragment;
 import com.prodigious.science.fair.recycleme.fragments.GoalsListFragment;
 
@@ -83,11 +84,15 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_score) {
 
+            //TODO load score fragment
         } else if (id == R.id.nav_goals) {
             loadGoalListFragment();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_challenges){
+            loadChallengeListFragment();
 
+        }else if (id == R.id.nav_share) {
+            //TODO implement share intent
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -105,6 +110,14 @@ public class MainActivity extends AppCompatActivity
 
     private void loadGoalListFragment(){
         GoalsListFragment fragment = GoalsListFragment.createGoalsListFragment();
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.content_main, fragment).
+                commit();
+    }
+
+    private void loadChallengeListFragment(){
+        ChallengeListFragment fragment = ChallengeListFragment.createChallengeListFragment();
         getSupportFragmentManager().
                 beginTransaction().
                 replace(R.id.content_main, fragment).

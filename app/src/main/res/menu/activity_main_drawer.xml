@@ -7,11 +7,6 @@
             android:icon="@android:drawable/stat_sys_upload"
             android:title="@string/action_add" />
         <item
-            android:id="@+id/nav_score"
-            android:icon="@android:drawable/btn_star"
-            android:title="@string/action_score" />
-        <!-- Change icons here -->
-        <item
             android:id="@+id/nav_goals"
             android:icon="@drawable/ic_goal"
             android:title="@string/action_goals" />
@@ -21,7 +16,7 @@
             android:title="@string/action_challenges" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"

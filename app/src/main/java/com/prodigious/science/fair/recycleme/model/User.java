@@ -9,9 +9,12 @@ public class User {
 
     private String email;
 
-    public User(String name, String email) {
+    private int score;
+
+    public User(String name, String email, int score) {
         this.name = name;
         this.email = email;
+        this.score = score;
     }
 
     public String getName() {
@@ -20,5 +23,9 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

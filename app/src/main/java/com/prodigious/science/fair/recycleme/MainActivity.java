@@ -82,9 +82,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_add) {
             loadInputTapFragmnet();
 
-        } else if (id == R.id.nav_score) {
-
-            //TODO load score fragment
         } else if (id == R.id.nav_goals) {
             loadGoalListFragment();
 

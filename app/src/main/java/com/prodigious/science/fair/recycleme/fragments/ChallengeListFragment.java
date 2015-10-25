@@ -44,7 +44,7 @@ public class ChallengeListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View fragment = inflater.inflate(R.layout.fragment_challenges_list, container, false);
-        this.challengeListView = (RecyclerView) fragment.findViewById(R.id.challenge_view);
+        this.challengeListView = (RecyclerView) fragment.findViewById(R.id.challenges_view);
 
         this.challengeLayoutManager = new LinearLayoutManager(this.getContext());
         this.challengeListView.setLayoutManager(this.challengeLayoutManager);

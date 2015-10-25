@@ -21,7 +21,7 @@ public class CodeInputFragment extends Fragment implements View.OnClickListener 
 
     private ImageButton actionAdd;
 
-    private CodeInputFragment() {
+    public CodeInputFragment() {
     }
 
     public static CodeInputFragment createCodeInputFragment() {

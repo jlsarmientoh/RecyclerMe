@@ -51,6 +51,11 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalViewHolder
         return goals.size();
     }
 
+    public void setGoals(List<Goal> newGoals){
+        this.goals = newGoals;
+        this.notifyDataSetChanged();
+    }
+
     public static class GoalViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtGoalDescription;

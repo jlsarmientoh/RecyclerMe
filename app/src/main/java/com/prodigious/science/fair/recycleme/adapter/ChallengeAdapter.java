@@ -51,6 +51,11 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         return this.challengeList.size();
     }
 
+    public void setChallengeList(List<Challenge> newChallengeList){
+        this.challengeList = newChallengeList;
+        this.notifyDataSetChanged();
+    }
+
     public static class ChallengeViewHolder extends RecyclerView.ViewHolder{
 
         private TextView txtChallengeDescription;

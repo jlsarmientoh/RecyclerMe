@@ -1,6 +1,7 @@
 package com.prodigious.science.fair.recycleme.fragments;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,9 @@ import android.view.ViewGroup;
 
 import com.prodigious.science.fair.recycleme.adapter.GoalAdapter;
 import com.prodigious.science.fair.recycleme.model.Goal;
+import com.prodigious.science.fair.recycleme.presenter.Presenter;
+import com.prodigious.science.fair.recycleme.presenter.PresenterFactory;
+import com.prodigious.science.fair.recycleme.presenter.PresenterType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,22 +23,16 @@ import fair.science.prodigious.com.recycleme.R;
 /**
  * Created by jsarmien on 10/23/15.
  */
-public class GoalsListFragment extends Fragment {
+public class GoalsListFragment extends Fragment implements MainFragment<List<Goal>> {
 
     private RecyclerView goalListView;
-    private RecyclerView.Adapter goalAdapter;
+    private GoalAdapter goalAdapter;
     private RecyclerView.LayoutManager goalLayoutManager;
     private List<Goal> goalList;
+    private Presenter presenter;
 
 
-    private GoalsListFragment() {
-        this.goalList = new ArrayList<Goal>();
-
-        this.goalList.add(new Goal("First cap", null, 10));
-        this.goalList.add(new Goal("Invite your friends", null, 10));
-        this.goalList.add(new Goal("Collected 10 caps", null, 20));
-        this.goalList.add(new Goal("Collected 20 caps in a single day", null, 40));
-        this.goalList.add(new Goal("Collector of the week", null, 50));
+    public GoalsListFragment() {
     }
 
     public static GoalsListFragment createGoalsListFragment() {
@@ -45,14 +43,37 @@ public class GoalsListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View fragment = inflater.inflate(R.layout.fragment_goals_list, container, false);
-        this.goalListView = (RecyclerView) fragment.findViewById(R.id.goals_view);
+        try {
+            this.goalListView = (RecyclerView) fragment.findViewById(R.id.goals_view);
 
-        this.goalLayoutManager = new LinearLayoutManager(this.getContext());
-        this.goalListView.setLayoutManager(this.goalLayoutManager);
+            this.goalLayoutManager = new LinearLayoutManager(this.getContext());
+            this.goalListView.setLayoutManager(this.goalLayoutManager);
 
-        this.goalAdapter = new GoalAdapter(this.goalList);
-        this.goalListView.setAdapter(this.goalAdapter);
+            this.goalAdapter = new GoalAdapter(this.goalList);
+            this.goalListView.setAdapter(this.goalAdapter);
+
+            this.presenter = PresenterFactory.create(PresenterType.GOAL, this);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         return fragment;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        this.presenter.onResume();
+    }
+
+    @Override
+    public void onUpdateContent(List<Goal> content) {
+        this.goalAdapter.setGoals(content);
+    }
+
+    @Override
+    public void onShowMessage(String message) {
+        Snackbar.make(this.getView(), message, Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 }

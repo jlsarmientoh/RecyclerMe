@@ -9,10 +9,13 @@ public class Challenge {
 
     private String imageUrl;
 
+    private int requiredCaps;
 
-    public Challenge(String description, String imageUrl) {
+
+    public Challenge(String description, String imageUrl, int requiredCaps) {
         this.description = description;
         this.imageUrl = imageUrl;
+        this.requiredCaps = requiredCaps;
     }
 
     public String getDescription() {
@@ -21,5 +24,9 @@ public class Challenge {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public int getRequiredCaps() {
+        return requiredCaps;
     }
 }

@@ -8,4 +8,6 @@ public interface Presenter {
     public void onResume();
 
     public void onItemClicked(int position);
+
+    public void onInput(String input);
 }

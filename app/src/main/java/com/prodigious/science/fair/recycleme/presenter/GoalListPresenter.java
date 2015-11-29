@@ -35,4 +35,9 @@ public class GoalListPresenter implements Presenter, OnFinishedListener<List<Goa
     public void onItemClicked(int position) {
 
     }
+
+    @Override
+    public void onInput(String input) {
+
+    }
 }

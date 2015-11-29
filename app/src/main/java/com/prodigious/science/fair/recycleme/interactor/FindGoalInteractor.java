@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class FindGoalInteractor implements ItemsInteractor<List<Goal>> {
 
-    private static List<Goal> mockGoals;
+    public static List<Goal> mockGoals;
 
     @Override
     public void findItems(OnFinishedListener<List<Goal>> listener) {

@@ -21,11 +21,14 @@ public class PresenterFactory {
                 presenter =  new ChallengeListPresenter(mainFragment);
                 break;
             }
-            case CODE:
+            case CODE: {
+                presenter = new CapInputPresenter(mainFragment);
                 break;
-            case GOAL:
+            }
+            case GOAL: {
                 presenter = new GoalListPresenter(mainFragment);
                 break;
+            }
             default:
                 throw new Exception("Presenter type does not exist");
         }

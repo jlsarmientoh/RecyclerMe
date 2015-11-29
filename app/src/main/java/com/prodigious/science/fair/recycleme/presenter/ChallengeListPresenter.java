@@ -32,6 +32,11 @@ public class ChallengeListPresenter implements Presenter, OnFinishedListener<Lis
     }
 
     @Override
+    public void onInput(String input) {
+
+    }
+
+    @Override
     public void onFinished(List<Challenge> result) {
         this.mainFragment.onUpdateContent(result);
     }

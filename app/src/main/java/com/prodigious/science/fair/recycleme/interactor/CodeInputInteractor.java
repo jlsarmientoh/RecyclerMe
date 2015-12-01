@@ -58,6 +58,7 @@ public class CodeInputInteractor implements InputInteractor<String, List<Goal>> 
 
             mockChallenges.add(new Challenge("Invite 10 friends", "", 10));
             mockChallenges.add(new Challenge("Collect your first cap", "", 1));
+            mockChallenges.add(new Challenge("Collect 5 caps", "", 5));
             mockChallenges.add(new Challenge("Collect 20 caps", "", 20));
             mockChallenges.add(new Challenge("Collect 10 caps in one single day", "", 10));
         }
